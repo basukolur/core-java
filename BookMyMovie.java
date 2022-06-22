@@ -2,15 +2,15 @@ class BookMyMovie {
 
 String movies[];
     String theatreName;
-    int ticketPrice = 600;
+   static int ticketPrice = 600;
     int totalNoOfTickets;
     int totalTicketPrice;
 
     String snacks[];
-	int noOfSnacks;
-	int snacksPrice;
+	int noOfSnacks = 100;
+	static int snacksPrice = 40;
 	
-public BookMyMovie(String theatreName, int totalNoOfTickets, String movies[], int noOfSnacks, int snacksPrice, String snacks[]){
+public BookMyMovie(String theatreName, int totalNoOfTickets, String movies[], String snacks[]){
 	 this.theatreName = theatreName;
 	 this.totalNoOfTickets = totalNoOfTickets;
 	 this.movies = movies;
@@ -33,8 +33,8 @@ public int showTime(int noOfTickets, String bookedBy, String movieName) {
 	    if(noOfTickets < totalNoOfTickets) {
 			totalTicketPrice = noOfTickets*ticketPrice;
 			totalNoOfTickets = totalNoOfTickets - noOfTickets;
-    System.out.println("For Movie : "+movieName +"  Total Price is : " +totalTicketPrice +
-                    "  No Of Tickets are That are Remaining : "+totalNoOfTickets +"  Booked By  "+bookedBy);
+    System.out.println("For Movie : "+movieName +"  Total Price of Booked Tickets : " +totalTicketPrice +
+                    "  Total Available Tickets : "+totalNoOfTickets +"  Booked By  "+bookedBy);
 		}
 		else {
 			System.out.println("Ista ticket illa...");
