@@ -1,0 +1,4 @@
+class KingFisher extends Beer {
+}
+
+

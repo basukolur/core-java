@@ -1,0 +1,2 @@
+class LIC extends LifeInsurance {
+}
