@@ -1,7 +1,7 @@
 class WeaponTester{
 	public static void main(String a[]){
 		
-		Weapon wp = new Weapon();
+		WeaponDTO wp = new WeaponDTO();
 		wp.setName("351 Magnum");
 		wp.setType("Gun");
 		wp.setRange(55);
@@ -9,8 +9,6 @@ class WeaponTester{
 		
 		
 		System.out.println(wp.getName()+":"+wp.getType()+":"+wp.getRange()+":"+wp.getOrigin());
-		wp.pistol();
+
 	}
-	
-	
 }

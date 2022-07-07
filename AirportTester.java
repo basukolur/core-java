@@ -1,7 +1,7 @@
 class AirportTester {
 	public static void main(String a[]){
 		
-		Airport airport = new Airport();
+		AirportDTO airport = new AirportDTO();
 		
 		airport.setName("Kempegowda International Airport ");
 		airport.setType("Public ");
@@ -9,7 +9,7 @@ class AirportTester {
 		airport.setOpenedIn(2008);
 		System.out.println(airport.getName()+" "+airport.getType()+" "+airport.getLocation()+" "
 		                            +airport.getOpenedIn());
-		airport.forJourney();
+	
 	}
 	
 }

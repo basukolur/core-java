@@ -1,5 +1,5 @@
-public class NewsPaper {
-	public NewsPaper(){
+public class NewsPaperDTO {
+	public NewsPaperDTO(){
 		
 	}
 	private String name;
@@ -38,7 +38,5 @@ public class NewsPaper {
 	public void setHeadQuarters(String headQuarters){
 		this.headQuarters = headQuarters;
 	}
-	void toGetKnowledge(){
-		System.out.println("Get a Knowledge");
-	}
+	
 }

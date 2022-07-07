@@ -1,5 +1,5 @@
-class Orthopedics{
-	public Orthopedics(){
+public class OrthopedicsDTO{
+	public OrthopedicsDTO(){
 	}
   private String name;
   private String sector;
@@ -33,10 +33,4 @@ class Orthopedics{
 	 public void setEducationReq(String educationReq){
 		 this.educationReq=educationReq;
 	 }
-	 
-	 
-  public void doctor(){
-	  System.out.println("Condition involving musculoskeletal system ");
-  }
-	
 }

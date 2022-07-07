@@ -1,7 +1,7 @@
 class NewsPaperTester {
 	public static void main(String a[]){
 		
-		NewsPaper news = new NewsPaper();
+		NewsPaperDTO news = new NewsPaperDTO();
 		
 		news.setName("The Hindu");
 		news.setPrice(10.00);
@@ -10,6 +10,6 @@ class NewsPaperTester {
 		news.setHeadQuarters("Chennai");
 		System.out.println(news.getName()+" "+news.getPrice()+" "+news.getFounder()+
 		                  " "+news.getFounded()+" "+news.getHeadQuarters());
-	    news.toGetKnowledge();
+	  
 	}
 }

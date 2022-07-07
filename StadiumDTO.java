@@ -1,5 +1,5 @@
-public class Stadium {
-	public Stadium(){
+public class StadiumDTO {
+	public StadiumDTO(){
 		
 	}
 	private String name;
@@ -37,9 +37,5 @@ public class Stadium {
 	}
 	public void setLocation(String location){
 		this.location = location;
-	}
-	
-	void toWatchGames(){
-		System.out.println(" To Watching Games");
 	}
 }

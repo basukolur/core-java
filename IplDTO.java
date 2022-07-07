@@ -1,5 +1,5 @@
-class Ipl{
-	public Ipl(){
+public class IplDTO{
+	public IplDTO(){
 	}
   private String gameOf;
   private String type;
@@ -41,10 +41,4 @@ class Ipl{
 	 public void setTeams(int teams){
 		 this.teams=teams;
 	 }
-	 
-	 
-  public void ipl(){
-	  System.out.println("IPL andre RCB");
-  }
-	
 }

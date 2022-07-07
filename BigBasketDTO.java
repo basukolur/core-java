@@ -1,5 +1,5 @@
-class BigBasket{
-	public BigBasket(){
+public class BigBasketDTO{
+	public BigBasketDTO(){
 	}
   private String ownedBy;
   private String type;
@@ -27,16 +27,10 @@ class BigBasket{
 		 this.startedIn=startedIn;
 	 }
 	 
-	 public String getOrigin(){
+	public String getOrigin(){
 		 return origin;
-	 }
-	 public void setOrigin(String origin){
+	}
+	public void setOrigin(String origin){
 		 this.origin=origin;
-	 }
-	 
-	 
-  public void bigb(){
-	  System.out.println("Order groceries online");
-  }
-	
+	}
 }

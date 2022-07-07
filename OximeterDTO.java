@@ -1,5 +1,5 @@
-class Oximeter{
-	public Oximeter(){
+public class OximeterDTO{
+	public OximeterDTO(){
 	}
   private String method;
   private String type;
@@ -33,10 +33,4 @@ class Oximeter{
 	 public void setOrigin(String origin){
 		 this.origin=origin;
 	 }
-	 
-	 
-  public void accuracy(){
-	  System.out.println("only 2% accuracy");
-  }
-	
 }

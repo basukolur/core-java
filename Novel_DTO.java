@@ -1,5 +1,5 @@
-public class Novel_{
-	public Novel_(){
+public class Novel_DTO{
+	public Novel_DTO(){
 	}
 	private String novelName;
     private double price;
@@ -36,8 +36,5 @@ public class Novel_{
 	}
 	public void setPublisher(String publisher){
 		this.publisher = publisher;
-	}
-	void readingStories(){
-		System.out.println("Reading Stories");
 	}
 }

@@ -1,5 +1,5 @@
-class MusicPlayer{
-	public MusicPlayer(){
+public class MusicPlayerDTO{
+	public MusicPlayerDTO(){
 	}
   private String name;
   private String type;
@@ -41,10 +41,4 @@ class MusicPlayer{
 	 public void setSize(String size){
 		 this.size=size;
 	 }
-	 
-	 
-  public void listen(){
-	  System.out.println("listen and Enjoy");
-  }
-	
 }

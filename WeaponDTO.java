@@ -1,5 +1,5 @@
-class Weapon{
-	public Weapon(){
+public class WeaponDTO{
+	public WeaponDTO(){
 	}
   private String name;
   private String type;
@@ -33,10 +33,4 @@ class Weapon{
 	 public void setOrigin(String origin){
 		 this.origin=origin;
 	 }
-	 
-	 
-  public void pistol(){
-	  System.out.println("Entada....shoot madbeka");
-  }
-	
 }

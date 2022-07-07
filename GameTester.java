@@ -1,7 +1,7 @@
 class GameTester{
 	public static void main(String a[]){
 		
-		Games gm = new Games();
+		GamesDTO gm = new GamesDTO();
 		gm.setName("BGMI");
 		gm.setType("online");
 		gm.setTotalPlayers(100);
@@ -9,8 +9,5 @@ class GameTester{
 		
 		
 		System.out.println(gm.getName()+":"+gm.getType()+":"+gm.getTotalPlayers()+":"+gm.getOrigin());
-		gm.pubg();
 	}
-	
-	
 }

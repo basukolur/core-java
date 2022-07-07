@@ -1,5 +1,5 @@
-public class Airport{
-	public Airport(){
+public class AirportDTO{
+	public AirportDTO(){
 		
 	}
 	private String name;
@@ -30,8 +30,5 @@ public class Airport{
 	}
 	public void setOpenedIn(int openedIn){
 		this.openedIn = openedIn;
-	}
-	void forJourney(){
-		System.out.println("Have a Safe Journey");
 	}
 }

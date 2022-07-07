@@ -1,5 +1,5 @@
-class TvChannel{
-	public TvChannel(){
+public class TvChannelDTO{
+	public TvChannelDTO(){
 	}
   private String channelName;
   private String type;
@@ -33,10 +33,4 @@ class TvChannel{
 	 public void setLanguage(String language){
 		 this.language=language;
 	 }
-	 
-	 
-  public void news(){
-	  System.out.println("Nirantara suddigagi nodta iri TV9");
-  }
-	
 }
