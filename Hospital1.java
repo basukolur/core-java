@@ -1,15 +1,11 @@
 class Hospital1 {
-	
-	//has many patients
-	PatientDTO[] dtos = new PatientDTO[5];
-	
-	//Instance variable
-	int index;
-	
-	public Hospital1(){
-		System.out.println("Hospital Constance is called");
+	PatientDTO[] dtos;                 //has many patients
+	int index;                          //Instance variable
+	                        
+	public Hospital1(int size){
+		dtos = new PatientDTO[size];
+		System.out.println("Hospital Constructor is called");
 	}
-	
 	public boolean createPatient(PatientDTO dto){
 		System.out.println("Inside createPatient");
 		boolean isAdded = false;
@@ -19,7 +15,7 @@ class Hospital1 {
 			System.out.println("Patient added Successfully");
 		} 
 		else {
-			System.out.println("Cannot add patient.. Please ");
+			System.out.println("Cannot add patient.. ");
 		}
 		return isAdded;
 	}
@@ -27,7 +23,7 @@ class Hospital1 {
 		System.out.println("Inside Get Patient Details ");
 		for(int i=0; i<dtos.length; i++){
 			System.out.println(dtos[i].getId()+" "+dtos[i].getName()+" "+dtos[i].getAddress()
-			                    +" "+dtos[i].getGender()+" "+dtos[i].getContactNo());
+			                    +" "/*+dtos[i].getGender()*/+" "+dtos[i].getContactNo());
 		}
 	}
 	
