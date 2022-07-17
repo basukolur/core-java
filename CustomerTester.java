@@ -26,28 +26,44 @@ public class CustomerTester {
 			dto.setDate(date);
 			cust.createOrder(dto);
 		}
-		cust.getOrderDetails();
 		
-		//invoking update Date By Id method
-			System.out.println("Enter the Existing id for date has to be");
-			int existingId = scan.nextInt();
-			System.out.println("Enter the Date to be Updated");
-			String updatedDate = scan.next();
-			cust.updateOrderDateById(existingId,updatedDate);
-		    cust.getOrderDetails();
+		String option = null;
+		do{
+			System.out.println("Enter 1 fetch all the Orders ");
+			System.out.println("Enter 2 to update the Order date by Id ");
+			System.out.println("Enter 3 to update order price by name ");
+			System.out.println("Enter 4 to delete order by name ");
+			System.out.println("Enter the Choise ");
+			int choise = scan.nextInt();
 			
-		//invoking update Price By name method	
-			System.out.println("Enter the Existing name for Price has to be");
-			String existingName = scan.next();
-			System.out.println("Enter the Price to be Updated");
-			double updatedPrice = scan.nextDouble();
-			cust.updateOrderPriceByName(existingName , updatedPrice);
-			cust.getOrderDetails();
-			
-		//invoking delete order by name method
-			System.out.println("Enter the Existing Name for delete Order");
-			String name = scan.next();
-		    cust.deleteOrderByName(name);
-			cust.getOrderDetails();
+			switch(choise){
+				case 1 : cust.getOrderDetails();
+				break;
+				
+				case 2 : System.out.println("Enter the Existing id for date has to be");
+			            int existingId = scan.nextInt();
+			            System.out.println("Enter the Date to be Updated");
+			            String updatedDate = scan.next();
+			            cust.updateOrderDateById(existingId,updatedDate);
+						break;
+						
+				case 3 : System.out.println("Enter the Existing name for Price has to be");
+			            String existingName = scan.next();
+			            System.out.println("Enter the Price to be Updated");
+			            double updatedPrice = scan.nextDouble();
+			            cust.updateOrderPriceByName(existingName , updatedPrice);
+						break;
+						
+				case 4 : System.out.println("Enter the Existing Name for delete Order");
+			            String name = scan.next();
+		                cust.deleteOrderByName(name);
+                        break;
+				default : System.out.println("Given choise cannot be delivered");
+                        break;			
+			}
+			System.out.println("Do you want to continue y/n ");
+			option = scan.next();
+		}
+		while(option.equals("y"));
 	}
 }

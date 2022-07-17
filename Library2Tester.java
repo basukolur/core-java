@@ -31,28 +31,44 @@ class Library2Tester {
 			dto.setLanguage(language);
 			lib.createBook(dto);
 		}
-		lib.getBookDetails();
 		
-		//invoking update Language By Id method
-			System.out.println("Enter the Existing id for language has to be");
-			int existingId = scan.nextInt();
-			System.out.println("Enter the Language to be Updated");
-			String updatedLanguage = scan.next();
-			lib.updateBookLanguageById(existingId,updatedLanguage);
-		    lib.getBookDetails();
+		String option = null;
+		do{
+			System.out.println("Enter 1 fetch all the Books ");
+			System.out.println("Enter 2 to update the Books Language by Id ");
+			System.out.println("Enter 3 to update Books Author by name ");
+			System.out.println("Enter 4 to delete Books by name ");
+			System.out.println("Enter the Choise ");
+			int choise = scan.nextInt();
 			
-		//invoking update Author By name method	
-			System.out.println("Enter the Existing name for Author has to be");
-			String existingName = scan.next();
-			System.out.println("Enter the Author to be Updated");
-			String updatedAuthor = scan.next();
-			lib.updateBookAuthorByName(existingName , updatedAuthor);
-			lib.getBookDetails();
-			
-		//invoking delete order by name method
-			System.out.println("Enter the Existing Name for delete Book");
-			String name = scan.next();
-		    lib.deleteBookByName(name);
-			lib.getBookDetails();
+			switch(choise){
+				case 1 : lib.getBookDetails();
+				break;
+				
+				case 2 : System.out.println("Enter the Existing id for language has to be");
+			            int existingId = scan.nextInt();
+			            System.out.println("Enter the Language to be Updated");
+			            String updatedLanguage = scan.next();
+			            lib.updateBookLanguageById(existingId,updatedLanguage);
+						break;
+						
+				case 3 : System.out.println("Enter the Existing name for Author has to be");
+			            String existingName = scan.next();
+			            System.out.println("Enter the Author to be Updated");
+			            String updatedAuthor = scan.next();
+			            lib.updateBookAuthorByName(existingName , updatedAuthor);
+                        break;
+
+                case 4 : System.out.println("Enter the Existing Name for delete Book");
+			            String name = scan.next();
+		                lib.deleteBookByName(name);
+                        break;
+                default : System.out.println("Given choise cannot be delivered");
+                        break;					
+			}
+			System.out.println("Do you want to continue y/n ");
+			option = scan.next();
+		}
+		while(option.equals("y"));
 	}
 }

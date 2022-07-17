@@ -26,28 +26,44 @@ public class Airport2Tester{
 			dto.setPlace(place);
 			ap.createTerminal(dto);
 		}
-		ap.getTerminalDetails();
-	
-	//invoking update No of Terminals By Id method
-			System.out.println("Enter the Existing id for Terminals has to be");
-			int existingId = scan.nextInt();
-			System.out.println("Enter the No of Terminals to be Updated");
-			int updatedNoOfTerminals = scan.nextInt();
-			ap.updateNoOfTerminalsById(existingId, updatedNoOfTerminals);
-			ap.getTerminalDetails();
+		
+		String option = null;
+		do{
+			System.out.println("Enter 1 fetch all the Terminals ");
+			System.out.println("Enter 2 to update the No of Terminals by Id ");
+			System.out.println("Enter 3 to update Terminals Place by name ");
+			System.out.println("Enter 4 to delete Terminals by name ");
+			System.out.println("Enter the Choise ");
+			int choise = scan.nextInt();
 			
-		//invoking update Place By name method	
-			System.out.println("Enter the Existing name for Place has to be");
-			String existingName = scan.next();
-			System.out.println("Enter the Place to be Updated");
-			String updatedplace = scan.next();
-			ap.updateTerminalsPlaceByName(existingName , updatedplace);
-			ap.getTerminalDetails();
-			
-		//invoking delete Terminals by name method
-			System.out.println("Enter the Existing Name for delete Terminals");
-			String name = scan.next();
-		    ap.deleteTerminalsByName(name);
-			ap.getTerminalDetails();
+			switch(choise){
+				case 1 : ap.getTerminalDetails();
+				break;
+				
+				case 2 : System.out.println("Enter the Existing id for Terminals has to be");
+			            int existingId = scan.nextInt();
+			            System.out.println("Enter the No of Terminals to be Updated");
+			            int updatedNoOfTerminals = scan.nextInt();
+			            ap.updateNoOfTerminalsById(existingId, updatedNoOfTerminals);
+						break;
+						
+				case 3 : System.out.println("Enter the Existing name for Place has to be");
+			            String existingName = scan.next();
+			            System.out.println("Enter the Place to be Updated");
+			            String updatedplace = scan.next();
+			            ap.updateTerminalsPlaceByName(existingName , updatedplace);
+						break;
+						
+				case 4 : System.out.println("Enter the Existing Name for delete Terminals");
+			            String name = scan.next();
+		                ap.deleteTerminalsByName(name);
+                        break;
+                default : System.out.println("Given choise cannot be delivered");
+                        break;							
+			}
+			System.out.println("Do you want to continue y/n ");
+			option = scan.next();
+		}
+		while(option.equals("y"));
 	}
 }
