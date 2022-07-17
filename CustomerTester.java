@@ -27,5 +27,27 @@ public class CustomerTester {
 			cust.createOrder(dto);
 		}
 		cust.getOrderDetails();
+		
+		//invoking update Date By Id method
+			System.out.println("Enter the Existing id for date has to be");
+			int existingId = scan.nextInt();
+			System.out.println("Enter the Date to be Updated");
+			String updatedDate = scan.next();
+			cust.updateOrderDateById(existingId,updatedDate);
+		    cust.getOrderDetails();
+			
+		//invoking update Price By name method	
+			System.out.println("Enter the Existing name for Price has to be");
+			String existingName = scan.next();
+			System.out.println("Enter the Price to be Updated");
+			double updatedPrice = scan.nextDouble();
+			cust.updateOrderPriceByName(existingName , updatedPrice);
+			cust.getOrderDetails();
+			
+		//invoking delete order by name method
+			System.out.println("Enter the Existing Name for delete Order");
+			String name = scan.next();
+		    cust.deleteOrderByName(name);
+			cust.getOrderDetails();
 	}
 }

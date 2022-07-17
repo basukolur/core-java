@@ -27,5 +27,27 @@ public class Airport2Tester{
 			ap.createTerminal(dto);
 		}
 		ap.getTerminalDetails();
+	
+	//invoking update No of Terminals By Id method
+			System.out.println("Enter the Existing id for Terminals has to be");
+			int existingId = scan.nextInt();
+			System.out.println("Enter the No of Terminals to be Updated");
+			int updatedNoOfTerminals = scan.nextInt();
+			ap.updateNoOfTerminalsById(existingId, updatedNoOfTerminals);
+			ap.getTerminalDetails();
+			
+		//invoking update Place By name method	
+			System.out.println("Enter the Existing name for Place has to be");
+			String existingName = scan.next();
+			System.out.println("Enter the Place to be Updated");
+			String updatedplace = scan.next();
+			ap.updateTerminalsPlaceByName(existingName , updatedplace);
+			ap.getTerminalDetails();
+			
+		//invoking delete Terminals by name method
+			System.out.println("Enter the Existing Name for delete Terminals");
+			String name = scan.next();
+		    ap.deleteTerminalsByName(name);
+			ap.getTerminalDetails();
 	}
 }

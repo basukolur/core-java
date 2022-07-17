@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Library2Tester {
 	public static void main(String a[]){
 		Scanner scan = new Scanner(System.in);
@@ -31,5 +32,27 @@ class Library2Tester {
 			lib.createBook(dto);
 		}
 		lib.getBookDetails();
+		
+		//invoking update Language By Id method
+			System.out.println("Enter the Existing id for language has to be");
+			int existingId = scan.nextInt();
+			System.out.println("Enter the Language to be Updated");
+			String updatedLanguage = scan.next();
+			lib.updateBookLanguageById(existingId,updatedLanguage);
+		    lib.getBookDetails();
+			
+		//invoking update Author By name method	
+			System.out.println("Enter the Existing name for Author has to be");
+			String existingName = scan.next();
+			System.out.println("Enter the Author to be Updated");
+			String updatedAuthor = scan.next();
+			lib.updateBookAuthorByName(existingName , updatedAuthor);
+			lib.getBookDetails();
+			
+		//invoking delete order by name method
+			System.out.println("Enter the Existing Name for delete Book");
+			String name = scan.next();
+		    lib.deleteBookByName(name);
+			lib.getBookDetails();
 	}
-}	
+}
