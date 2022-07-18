@@ -1,69 +1,105 @@
-import java.util.Scanner;
-public class CustomerTester {
-	public static void main(String a[]){
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the Number of Order to be Added");
-		int size = scan.nextInt();
-		
-		Customer cust = new Customer(size);
-		for(int i=0; i<size; i++){
-			System.out.println("Enter Order Id : ");
-			int id = scan.nextInt();
+import java.util.Scanner ;
+
+class CustomerTester{
+
+      public static void main(String a[]){
+	     
+		 Scanner sc = new Scanner(System.in);
+		 System.out.println("Enter the Number of orders");
+		 int size = sc.nextInt();
+		 
+		 Customer cus = new Customer(size);
+		 
+		for(int i=0; i<size;i++) {
 			
-			System.out.println("Enter Order Name : ");
-			String name = scan.next();
-			
-			System.out.println("Enter Order Price : ");
-			double price= scan.nextDouble();
-			
-			System.out.println("Enter Order Date : ");
-			String date = scan.next();
-			
-			OrderDTO dto = new OrderDTO();
-			dto.setId(id);
-			dto.setName(name);
-			dto.setPrice(price);
-			dto.setDate(date);
-			cust.createOrder(dto);
-		}
-		
-		String option = null;
-		do{
-			System.out.println("Enter 1 fetch all the Orders ");
-			System.out.println("Enter 2 to update the Order date by Id ");
-			System.out.println("Enter 3 to update order price by name ");
-			System.out.println("Enter 4 to delete order by name ");
-			System.out.println("Enter the Choise ");
-			int choise = scan.nextInt();
-			
-			switch(choise){
-				case 1 : cust.getOrderDetails();
-				break;
+		   OrderDTO order = new OrderDTO();
+		   
+		   System.out.println("Enter the id of the order");
+		   int id = sc.nextInt();
+		   System.out.println("Enter the Order name");
+		   String name = sc.next();
+		   System.out.println("Enter the quantity of the order");
+		   int quantity = sc.nextInt();
+		   System.out.println("Enter type of the order");
+		   String type = sc.next();
+		   
+		   order.setId(id);
+		   order.setName(name);
+		   order.setQuantity(quantity);
+		   order.setType(type);
+		   
+		   cus.createOrder(order);
+		 
+		 
+		 }
+		 
+		 String option = null;
+		 do{
+			 System.out.println("Enter 1 for order details");
+			 System.out.println("Enter 2 for Update the name by id");
+			 System.out.println("Enter 3 for update quantity by name");
+			 System.out.println("enter 4 for delete by name");
+			 System.out.println("Enter 5 for delete by id");
+			 System.out.println("Enter 6 for getOrderTypeby name");
+			 System.out.println("Enter 7 for getOrder name by id");
+			 System.out.println("Enter 8 for getallOrderquantities");
+			 System.out.println("Enter 9 for get all order names");
+			 
+			 System.out.println("Enter choice");
+			 int choice = sc.nextInt();
+			 
+			 switch(choice){
+				 case 1: cus.getOrderDetails();
+				         break ;
 				
-				case 2 : System.out.println("Enter the Existing id for date has to be");
-			            int existingId = scan.nextInt();
-			            System.out.println("Enter the Date to be Updated");
-			            String updatedDate = scan.next();
-			            cust.updateOrderDateById(existingId,updatedDate);
-						break;
-						
-				case 3 : System.out.println("Enter the Existing name for Price has to be");
-			            String existingName = scan.next();
-			            System.out.println("Enter the Price to be Updated");
-			            double updatedPrice = scan.nextDouble();
-			            cust.updateOrderPriceByName(existingName , updatedPrice);
-						break;
-						
-				case 4 : System.out.println("Enter the Existing Name for delete Order");
-			            String name = scan.next();
-		                cust.deleteOrderByName(name);
-                        break;
-				default : System.out.println("Given choise cannot be delivered");
-                        break;			
-			}
-			System.out.println("Do you want to continue y/n ");
-			option = scan.next();
-		}
-		while(option.equals("y"));
-	}
+				 case 2 : System.out.println("Enter the existing Name to update the quantity");
+		                  String existingName = sc.next();
+		                  System.out.println("Enter quantity to be update");
+		                  int updatequantity = sc.nextInt();
+		                  cus.updatequantityByName(existingName, updatequantity);
+                           break ;
+                 case 3 : System.out.println("Enter the existing id to update the name");
+		                  int existingId = sc.nextInt();
+		                  System.out.println("Enter name to  update");
+		                  String updateName = sc.next();
+						  cus.updateNameById(existingId, updateName);
+						  break;
+				 case 4 : System.out.println("Enter the name to be deleted");
+		                   String name1 = sc.next();
+		                  cus.deleteByName(name1);
+						  break;
+				 case 5 : System.out.println("enter the id to be deleted");
+		                   int id1 = sc.nextInt();
+		                   cus.deleteById(id1);
+		 			       break;
+						  
+				 case 6 : System.out.println("enter name to find the type");
+				           String name2 = sc.next();
+						  System.out.println( cus.getOrderTypeByName(name2));
+						   break ;
+						   
+				 case 7 : System.out.println("Enter id to get name");
+				           int id2 = sc.nextInt();
+						   System.out.println(cus.getOrderNameById(id2));
+						   break ;
+						   
+				 case 8 : cus.getAllQuantities();
+				           break ;
+							
+				 case 9 : cus.getAllOrderName();
+				           break;
+				 default : System.out.println("Enter valid choice");
+				           break;
+			 }
+			 
+			 System.out.println("Do you want to continue Y/N");
+			 option = sc.next();
+			 
+			 
+		 }while(option.equals("Y"));
+		 
+
+	  }
+
+
 }

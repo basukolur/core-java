@@ -1,78 +1,113 @@
 import java.util.Arrays;
+class Hotel{
 
-class Hotel {
-	FoodItemsDTO[] dtos;
+
+    FoodItemsDTO[] foodItems ;
 	int index;
+	
 	public Hotel(int size){
-		dtos = new FoodItemsDTO[size];
-		System.out.println("Hotel Constructor is Called");
+	  foodItems = new FoodItemsDTO[size];
+      System.out.println("The Hotel constructor is created");	  
+	
 	}
-	public boolean createFoodItems(FoodItemsDTO dto){
-		System.out.println("Inside Order Food Items");
+	
+	public boolean createFoodItem(FoodItemsDTO foodItem){
+	
+	    System.out.println("Inside the createFoodItem()");
 		boolean isAdded = false;
 		
-		if((dto!=null && dto.getName()!=null)){
-			this.dtos[index++] = dto;
+		if(foodItem != null && foodItem.getName() != null) {
+		    
+			this.foodItems[index++] = foodItem;
 			isAdded = true;
-			System.out.println("Hotel Food Item is Added Successfully");
+			System.out.println("The foodItems detail is saved");
+		} else {
+		   System.out.println("The foodItems is not saved");
+		
 		}
-		else {
-			System.out.println("Food Item is Not Added");
-		}
-		return isAdded;
+	       System.out.println("the createFoodItem() is ended");
+	   return isAdded;
 	}
 	
-	public void getFoodDetails(){
-		System.out.println("Inside Get Food Details");
-		for(int i=0; i<dtos.length;i++){
-			System.out.println(dtos[i].getId()+"  "+dtos[i].getName()+"   "+dtos[i].getPrice());
-		}
+	public void getFoodItemDetails(){
+	
+	     
+		 for(int i=0; i<foodItems.length; i++){
+		    
+			  System.out.println(foodItems[i]);
+		 
+		 }
+	     
 	}
 	
-	public boolean updateFoodItemPriceById(int id, double price){
-		System.out.println("Inside Update Food Item Price by Id");
-		boolean updatePrice = false;
-		for(int i=0; i<dtos.length; i++){
-			if(dtos[i].getId() == id){
-				dtos[i].setPrice(price);
-				updatePrice = true;
-				System.out.println("Updated Successfully");
-			}
-			else{
-				System.out.println("Food Item Id Not Matching");
-			}
-		}
-		return updatePrice;
-	}
-	 public boolean updateFoodItemPriceByName(String name , double price){
-		  System.out.println("inside update FoodItem Price By Name");
-		  boolean updatePrice=false;
-		  for(int i=0; i<dtos.length;i++){
-		  if(dtos[i].getName().equals(name)){
-			  dtos[i].setPrice(price);
-			  updatePrice = true;
-		  }
-		  else{
-			  System.out.println("Name is not matching");
-		  }
+	public boolean updatePriceByName(String name, int price){
+		 
+		 System.out.println("Inside updatePriceByName ");
+		 boolean updatePrice = false;
+		 for(int i=0; i<foodItems.length;i++){
+			 if(foodItems[i].getName().equals(name)){
+				 foodItems[i].setPrice(price);
+				 updatePrice = true;
+				 
+			 }
+			 else{
+				 System.out.println("The food name is not found");
+			 }
 		 }
 		 return updatePrice;
-	  }
-	  public boolean deleteFoodItemByName(String name){
-			System.out.println("Inside Delete Food Item by Name");
-			boolean foodItemDeleted = false;
-			int i,j;
-			for(i=0,j=0; j<dtos.length; j++){
-				if(!dtos[j].getName().equals(name)){
-					dtos[i++] = dtos[j];
-					foodItemDeleted = true;
-					System.out.println("Food Item Deleted Successfully");
-				}
-				else{
-					System.out.println("Name is not Matching");
-				}
-			}
-			dtos = Arrays.copyOf(dtos,i);
-			return foodItemDeleted;
-		}
-} 
+	 }
+	 
+	 
+	 
+	  public boolean deleteByName(String name){
+		 System.out.println("inside deleteByName");
+		 boolean deleteFoodItem=false;
+		 int i,j;
+		 for(i=0,j=0;j<foodItems.length;j++){
+			 if(!foodItems[j].getName().equals(name)){
+				 foodItems[i++]=foodItems[j];
+				 deleteFoodItem = true;
+			 } else {
+				 System.out.println("the foodItem is deleted");
+			 }
+		 }
+		 foodItems = Arrays.copyOf(foodItems, i);
+		 return deleteFoodItem;
+	 }
+	 
+	 
+	  public boolean deleteByType(String type){
+		 System.out.println("inside deleteByType");
+		 boolean deleteFoodItem=false;
+		 int i,j;
+		 for(i=0,j=0;j<foodItems.length;j++){
+			 if(foodItems[j].getType()!=type){
+				 foodItems[i++]=foodItems[j];
+				 deleteFoodItem = true;
+			 } else {
+				 System.out.println("the foodItem is deleted");
+			 }
+		 }
+		 foodItems = Arrays.copyOf(foodItems, i);
+		 System.out.println("end deleteByType ");
+		 return deleteFoodItem;
+	 }
+	 
+	 public String[] getAllFoodItemName(){
+		 System.out.println("Inside getAllFoodItemName ");
+		 int i,j;
+		 for( j=0,i=0;i<foodItems.length;i++){ 
+			  System.out.println(foodItems[i].getName());
+			  j++;
+		 }
+		    
+		  String[] allFoodName = new String[j];
+		   for(int k=0,m=0;k<foodItems.length;k++){
+			 allFoodName[m++] = foodItems[k].getName(); 
+		  }
+           System.out.println("End getAllFoodItemName ");
+		 return allFoodName;
+	 }
+	 
+
+}
