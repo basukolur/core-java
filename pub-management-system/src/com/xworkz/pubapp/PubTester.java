@@ -13,6 +13,9 @@ public class PubTester {
 			bouncer.check(age);
 		} catch (PubException e) {
 			e.printStackTrace();
+		} finally {
+			System.out.println("Closing all the costly reources");
+			sc.close();
 		}
 		System.out.println("Main Ended");
 	}

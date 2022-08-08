@@ -13,8 +13,11 @@ public class AtmTester {
 			machine.withdraw(limit);
 		} catch (AtmException e) {
 			e.printStackTrace();
+		} finally {
+			System.out.println("Closing all the costly resources");
+			sc.close();
 		}
 		System.out.println("main method ended");
-		sc.close();
 	}
+
 }
